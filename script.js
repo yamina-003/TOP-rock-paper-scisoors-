@@ -14,9 +14,8 @@ function getComputerChoice(randomInt) {
 
 // test purposes only 
 // note for self delete the variable randomInt before submitting the project
-const randomInt = getRandomInt();
-console.log(randomInt);
-console.log(getComputerChoice(randomInt));
+// const randomInt = getRandomInt(); 
+//console.log(randomInt); console.log(getComputerChoice(randomInt));
 
 // getHumanChoice to get the user's desired move
 
@@ -25,9 +24,29 @@ function getHumanChoice() {
 }
 
 // test purposes only 
-console.log(getHumanChoice());
+//console.log(getHumanChoice());
 
 // keep track of the players scores
 let humanScore = 0;
 let computerScore = 0;
 
+
+
+// the function to play a single round
+function playRound(humanChoice, computerChoice) {
+   if (humanChoice.toLowerCase() === computerChoice) {
+    console.log("it is a tie")
+   } else if ((humanChoice.toLowerCase() == "paper" && computerChoice == "rock") || 
+   (humanChoice.toLowerCase() == "scisoors" && computerChoice == "paper") || 
+   (humanChoice.toLowerCase() == "rock" && computerChoice == "scisoors")) {
+     console.log(" you win! "+ humanChoice.toLowerCase() + " beats " + computerChoice + ".");
+   } else {
+    console.log(" you loose! "+ computerChoice + " beats " + humanChoice.toLowerCase() + ".");
+   }
+}
+
+let humanChoice = getHumanChoice();
+let computerChoice = getComputerChoice(getRandomInt());
+console.log(humanChoice);
+console.log(computerChoice);
+playRound(humanChoice, computerChoice);
