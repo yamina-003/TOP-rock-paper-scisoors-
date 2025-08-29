@@ -18,3 +18,16 @@ const randomInt = getRandomInt();
 console.log(randomInt);
 console.log(getComputerChoice(randomInt));
 
+// getHumanChoice to get the user's desired move
+
+function getHumanChoice() {
+    return prompt("choose your move by typing one of these : rock , paper or scisoors");
+}
+
+// test purposes only 
+console.log(getHumanChoice());
+
+// keep track of the players scores
+let humanScore = 0;
+let computerScore = 0;
+
