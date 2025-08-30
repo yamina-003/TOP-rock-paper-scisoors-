@@ -45,13 +45,6 @@ function playRound(humanChoice, computerChoice) {
    }
 }
 
-function checkScore(score) {
-     if (score === 1) {
-            humanScore++;
-        } else if(score === 2) {
-            computerScore++;
-        }
-}
 
 
 function printScore(userScore, opponentScore){
@@ -65,6 +58,31 @@ function printScore(userScore, opponentScore){
 }
 
 
+// the function to play a 5 rounds
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+    let score;
+    for (let i = 1; i<= 5; i++) {
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice(getRandomInt());
+        console.log(humanChoice);
+        console.log(computerChoice);
+
+        score = playRound(humanChoice, computerChoice);
+        if (score === 1) {
+            humanScore++;
+        } else if(score === 2) {
+            computerScore++;
+        }
+        
+    }
+
+    printScore(humanScore, computerScore);
+}
+
+
+playGame();
 
 
 
