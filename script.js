@@ -35,18 +35,27 @@ let computerScore = 0;
 // the function to play a single round
 function playRound(humanChoice, computerChoice) {
    if (humanChoice.toLowerCase() === computerChoice) {
-    console.log("it is a tie")
+    return 0;
    } else if ((humanChoice.toLowerCase() == "paper" && computerChoice == "rock") || 
    (humanChoice.toLowerCase() == "scisoors" && computerChoice == "paper") || 
    (humanChoice.toLowerCase() == "rock" && computerChoice == "scisoors")) {
-     console.log(" you win! "+ humanChoice.toLowerCase() + " beats " + computerChoice + ".");
+     return 1;
    } else {
-    console.log(" you loose! "+ computerChoice + " beats " + humanChoice.toLowerCase() + ".");
+    return 2;
    }
 }
 
-let humanChoice = getHumanChoice();
-let computerChoice = getComputerChoice(getRandomInt());
-console.log(humanChoice);
-console.log(computerChoice);
-playRound(humanChoice, computerChoice);
+function printScore(userScore, opponentScore){
+    if (userScore > opponentScore) {
+        console.log("you won! your score is: "+ userScore + " the opponent's score is : " + opponentScore + ".");
+    } else if(userScore < opponentScore){
+        console.log("you lost! your score is: "+ userScore + " the opponent's score is : " + opponentScore + ".");
+    } else {
+        console.log("it's a tie. your score is: "+ userScore + " the opponent's score is : " + opponentScore + ".");
+    }
+ }
+
+
+
+
+
