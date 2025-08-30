@@ -45,6 +45,15 @@ function playRound(humanChoice, computerChoice) {
    }
 }
 
+function checkScore(score) {
+     if (score === 1) {
+            humanScore++;
+        } else if(score === 2) {
+            computerScore++;
+        }
+}
+
+
 function printScore(userScore, opponentScore){
     if (userScore > opponentScore) {
         console.log("you won! your score is: "+ userScore + " the opponent's score is : " + opponentScore + ".");
@@ -53,7 +62,9 @@ function printScore(userScore, opponentScore){
     } else {
         console.log("it's a tie. your score is: "+ userScore + " the opponent's score is : " + opponentScore + ".");
     }
- }
+}
+
+
 
 
 
