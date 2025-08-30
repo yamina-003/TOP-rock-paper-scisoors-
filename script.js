@@ -12,25 +12,10 @@ function getComputerChoice(randomInt) {
     : "scisoors";
 }
 
-// test purposes only 
-// note for self delete the variable randomInt before submitting the project
-// const randomInt = getRandomInt(); 
-//console.log(randomInt); console.log(getComputerChoice(randomInt));
-
 // getHumanChoice to get the user's desired move
-
 function getHumanChoice() {
     return prompt("choose your move by typing one of these : rock , paper or scisoors");
 }
-
-// test purposes only 
-//console.log(getHumanChoice());
-
-// keep track of the players scores
-let humanScore = 0;
-let computerScore = 0;
-
-
 
 // the function to play a single round
 function playRound(humanChoice, computerChoice) {
@@ -45,8 +30,7 @@ function playRound(humanChoice, computerChoice) {
    }
 }
 
-
-
+// function to print the players final scores
 function printScore(userScore, opponentScore){
     if (userScore > opponentScore) {
         console.log("you won! your score is: "+ userScore + " the opponent's score is : " + opponentScore + ".");
@@ -58,7 +42,7 @@ function printScore(userScore, opponentScore){
 }
 
 
-// the function to play a 5 rounds
+// the function to play  5 rounds
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
@@ -66,6 +50,7 @@ function playGame() {
     for (let i = 1; i<= 5; i++) {
         let humanChoice = getHumanChoice();
         let computerChoice = getComputerChoice(getRandomInt());
+
         console.log(humanChoice);
         console.log(computerChoice);
 
@@ -75,9 +60,7 @@ function playGame() {
         } else if(score === 2) {
             computerScore++;
         }
-        
     }
-
     printScore(humanScore, computerScore);
 }
 
