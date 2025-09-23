@@ -31,20 +31,21 @@ function getHumanChoice(event) {
 }*/
 
 const buttons = document.querySelector(".buttons ");
+const result = document.querySelector(".results");
 
 
 
 function playRound(humanChoice, computerChoice){
     if(humanChoice === computerChoice){
-        console.log("it is a draw");
+        result.textContent = "it is a draw";
         console.log(computerChoice);
     } else if ((humanChoice == "paper" && computerChoice == "rock") || 
    (humanChoice== "scisoors" && computerChoice == "paper") || 
    (humanChoice == "rock" && computerChoice == "scisoors")) {
-        console.log("you won");
+        result.textContent = "you won";
         console.log(computerChoice);
    } else {
-        console.log("you lost");
+        result.textContent ="you lost";
         console.log(computerChoice);
    }
 
