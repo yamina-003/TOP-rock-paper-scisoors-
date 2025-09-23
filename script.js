@@ -13,12 +13,12 @@ function getComputerChoice(randomInt) {
 }
 
 // getHumanChoice to get the user's desired move
-function getHumanChoice() {
-    return prompt("choose your move by typing one of these : rock , paper or scisoors");
+function getHumanChoice(event) {
+    return event.target.textContent;
 }
 
 // the function to play a single round
-function playRound(humanChoice, computerChoice) {
+/*function playRound(humanChoice, computerChoice) {
    if (humanChoice.toLowerCase() === computerChoice) {
     return 0;
    } else if ((humanChoice.toLowerCase() == "paper" && computerChoice == "rock") || 
@@ -28,25 +28,30 @@ function playRound(humanChoice, computerChoice) {
    } else {
     return 2;
    }
+}*/
+
+const buttons = document.querySelector(".buttons ");
+
+
+
+function playRound(humanChoice, computerChoice){
+    if(humanChoice === computerChoice){
+        console.log("it is a draw");
+        console.log(computerChoice);
+    } else if ((humanChoice == "paper" && computerChoice == "rock") || 
+   (humanChoice== "scisoors" && computerChoice == "paper") || 
+   (humanChoice == "rock" && computerChoice == "scisoors")) {
+        console.log("you won");
+        console.log(computerChoice);
+   } else {
+        console.log("you lost");
+        console.log(computerChoice);
+   }
+
 }
 
+buttons.addEventListener("click", (e) =>playRound(getHumanChoice(e), getComputerChoice(getRandomInt())));
 
-const section = document.querySelector("section");
-
-const btnRock = document.createElement("button");
-btnRock.textContent ="rock";
-btnRock.id = "rock";
-section.appendChild(btnRock);
-
-const btnPaper = document.createElement("button");
-btnPaper.textContent = "paper";
-btnPaper.id = "paper";
-section.appendChild(btnPaper);
-
-const btnScisoors = document.createElement("button");
-btnScisoors.textContent = "scisoors";
-btnScisoors.id = "scisoors";
-section.appendChild(btnScisoors);
 
 
 
