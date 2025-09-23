@@ -30,8 +30,38 @@ function playRound(humanChoice, computerChoice) {
    }
 }
 
+
+const section = document.querySelector("section");
+
+const btnRock = document.createElement("button");
+btnRock.textContent ="rock";
+btnRock.id = "rock";
+section.appendChild(btnRock);
+
+const btnPaper = document.createElement("button");
+btnPaper.textContent = "paper";
+btnPaper.id = "paper";
+section.appendChild(btnPaper);
+
+const btnScisoors = document.createElement("button");
+btnScisoors.textContent = "scisoors";
+btnScisoors.id = "scisoors";
+section.appendChild(btnScisoors);
+
+
+
+
+
+
+
+
+
+
+
+
+
 // function to print the players final scores
-function printScore(userScore, opponentScore){
+/*function printScore(userScore, opponentScore){
     if (userScore > opponentScore) {
         console.log("you won! your score is: "+ userScore + " the opponent's score is : " + opponentScore + ".");
     } else if(userScore < opponentScore){
@@ -41,26 +71,8 @@ function printScore(userScore, opponentScore){
     }
 }
 
-
-
-const section = document.querySelector("section");
-
-const btnRock = document.createElement("button");
-btnRock.textContent ="rock";
-section.appendChild(btnRock);
-
-const btnPaper = document.createElement("button");
-btnPaper.textContent = "paper";
-section.appendChild(btnPaper);
-
-const btnScisoors = document.createElement("button");
-btnScisoors.textContent = "scisoors";
-section.appendChild(btnScisoors);
-
-
-
 // the function to play  5 rounds
-/*function playGame() {
+function playGame() {
     let humanScore = 0;
     let computerScore = 0;
     let score;
