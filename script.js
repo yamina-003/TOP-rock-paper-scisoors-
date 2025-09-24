@@ -31,25 +31,40 @@ function getHumanChoice(event) {
 }*/
 
 const buttons = document.querySelector(".buttons ");
-const result = document.querySelector(".results");
+const message = document.querySelector(".message");
+const playerScore = document.querySelector(".player");
+const comScore = document.querySelector(".computer");
 
+let humanScore = 0;
+let computerScore = 0;
+
+playerScore.textContent = humanScore;
+comScore.textContent = computerScore;
 
 
 function playRound(humanChoice, computerChoice){
-    if(humanChoice === computerChoice){
-        result.textContent = "it is a draw";
-        console.log(computerChoice);
-    } else if ((humanChoice == "paper" && computerChoice == "rock") || 
+
+    if (humanScore < 5 && computerScore < 5){
+       if ((humanChoice == "paper" && computerChoice == "rock") || 
    (humanChoice== "scisoors" && computerChoice == "paper") || 
    (humanChoice == "rock" && computerChoice == "scisoors")) {
-        result.textContent = "you won";
+        message.textContent = "you won";
         console.log(computerChoice);
+        humanScore++;
+        playerScore.textContent = humanScore;
+        comScore.textContent= computerScore;
    } else {
-        result.textContent ="you lost";
+        message.textContent ="you lost";
         console.log(computerChoice);
+        computerScore++;
+        playerScore.textContent = humanScore;
+        comScore.textContent= computerScore;
    }
+    } 
+    
 
 }
+
 
 buttons.addEventListener("click", (e) =>playRound(getHumanChoice(e), getComputerChoice(getRandomInt())));
 
