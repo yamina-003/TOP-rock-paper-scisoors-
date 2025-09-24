@@ -1,0 +1,18 @@
+html{
+    background-color: #3ea66b;
+}
+
+.instruction{
+    text-align: center;
+}
+
+button{
+    background-color: #ffd83f;
+    border: solid 2px black;
+    border-radius: 25px;
+    color: #ff6953;
+    font-family: Bernoru, "sans-serif";
+    font-weight: bold;
+    font-size: 25px;
+    padding: 8px 16px;
+}
