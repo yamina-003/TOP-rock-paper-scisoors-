@@ -54,6 +54,8 @@ const btnPlayAgain = document.querySelector(".play-again");
 btnPlayAgain.addEventListener("click", () =>{
     playerScore.textContent = 0;
     comScore.textContent = 0;
+    humanScore = 0;
+    computerScore = 0;
 })
 
 
