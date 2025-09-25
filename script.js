@@ -32,8 +32,8 @@ function getHumanChoice(event) {
 
 const buttons = document.querySelector(".buttons ");
 const message = document.querySelector(".message");
-const playerScore = document.querySelector(".player");
-const comScore = document.querySelector(".computer");
+const playerScore = document.querySelector(".player .score");
+const comScore = document.querySelector(".computer .score");
 
 let humanScore = 0;
 let computerScore = 0;
