@@ -38,3 +38,12 @@ button{
     font-size: 25px;
     padding: 8px 16px;
 }
+
+.reset{
+    display: flex;
+    justify-content: center;
+}
+
+.play-again{
+    background-color: #f9b2dc;
+}

@@ -1,5 +1,5 @@
 
-// a function to return a rando; int between 0 and 2
+// a function to return a random int between 0 , 1 or 2
 function getRandomInt() {
     return Math.floor(Math.random()* 3);
 }
@@ -17,18 +17,6 @@ function getHumanChoice(event) {
     return event.target.textContent;
 }
 
-// the function to play a single round
-/*function playRound(humanChoice, computerChoice) {
-   if (humanChoice.toLowerCase() === computerChoice) {
-    return 0;
-   } else if ((humanChoice.toLowerCase() == "paper" && computerChoice == "rock") || 
-   (humanChoice.toLowerCase() == "scisoors" && computerChoice == "paper") || 
-   (humanChoice.toLowerCase() == "rock" && computerChoice == "scisoors")) {
-     return 1;
-   } else {
-    return 2;
-   }
-}*/
 
 const buttons = document.querySelector(".buttons ");
 const message = document.querySelector(".message");
@@ -43,79 +31,30 @@ comScore.textContent = computerScore;
 
 
 function playRound(humanChoice, computerChoice){
-
     if (humanScore < 5 && computerScore < 5){
        if ((humanChoice == "paper" && computerChoice == "rock") || 
-   (humanChoice== "scisoors" && computerChoice == "paper") || 
-   (humanChoice == "rock" && computerChoice == "scisoors")) {
-        message.textContent = "you won";
-        console.log(computerChoice);
-        humanScore++;
-        playerScore.textContent = humanScore;
-        comScore.textContent= computerScore;
-   } else {
-        message.textContent ="you lost";
-        console.log(computerChoice);
-        computerScore++;
-        playerScore.textContent = humanScore;
-        comScore.textContent= computerScore;
-   }
-    } 
-    
-
+           (humanChoice== "scisoors" && computerChoice == "paper") || 
+            (humanChoice == "rock" && computerChoice == "scisoors")) {
+                humanScore++;
+                playerScore.textContent = humanScore;
+                comScore.textContent= computerScore;
+        } else {
+                computerScore++;
+                playerScore.textContent = humanScore;
+                comScore.textContent= computerScore;
+        }
+    }
 }
 
 
 buttons.addEventListener("click", (e) =>playRound(getHumanChoice(e), getComputerChoice(getRandomInt())));
 
+const btnPlayAgain = document.querySelector(".play-again");
 
-
-
-
-
-
-
-
-
-
-
-
-
-// function to print the players final scores
-/*function printScore(userScore, opponentScore){
-    if (userScore > opponentScore) {
-        console.log("you won! your score is: "+ userScore + " the opponent's score is : " + opponentScore + ".");
-    } else if(userScore < opponentScore){
-        console.log("you lost! your score is: "+ userScore + " the opponent's score is : " + opponentScore + ".");
-    } else {
-        console.log("it's a tie. your score is: "+ userScore + " the opponent's score is : " + opponentScore + ".");
-    }
-}
-
-// the function to play  5 rounds
-function playGame() {
-    let humanScore = 0;
-    let computerScore = 0;
-    let score;
-    for (let i = 1; i<= 5; i++) {
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice(getRandomInt());
-
-        console.log(humanChoice);
-        console.log(computerChoice);
-
-        score = playRound(humanChoice, computerChoice);
-        if (score === 1) {
-            humanScore++;
-        } else if(score === 2) {
-            computerScore++;
-        }
-    }
-    printScore(humanScore, computerScore);
-}
-
-
-playGame();*/
+btnPlayAgain.addEventListener("click", () =>{
+    playerScore.textContent = 0;
+    comScore.textContent = 0;
+})
 
 
 
