@@ -6,6 +6,13 @@ html{
     text-align: center;
 }
 
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    
+}
+
 button{
     background-color: #ffd83f;
     border: solid 2px black;
