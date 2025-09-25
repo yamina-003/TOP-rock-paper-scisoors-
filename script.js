@@ -60,5 +60,3 @@ btnPlayAgain.addEventListener("click", () =>{
 
 
 
-
-
